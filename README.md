@@ -12,3 +12,7 @@ INTEGRANTES DO GRUPO;
 1. **Clone o repositório:**
    ```bash
    git clone <URL_DO_SEU_REPOSITORIO>
+
+## Diagrama de Classes
+
+![Diagrama de Classes da Clínica Veterinária](img/Diagrama-2026-11-22-204324.png)
