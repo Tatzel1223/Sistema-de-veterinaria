@@ -18,6 +18,9 @@ export interface MensagemHistorico {
   texto: string;
 }
 
+// Em localhost o proxy do ng serve cuida do /api; na nuvem chamamos a API direto.
+const API_URL = location.hostname === 'localhost' ? '' : 'https://sistema-de-veterinaria-production.up.railway.app';
+
 @Injectable({ providedIn: 'root' })
 export class IaService {
   private http = inject(HttpClient);
@@ -38,7 +41,7 @@ export class IaService {
       },
       historico,
     };
-    return this.http.post<{ resposta: string }>('/api/ia', body).pipe(map(r => r.resposta));
+    return this.http.post<{ resposta: string }>(`${API_URL}/api/ia`, body).pipe(map(r => r.resposta));
   }
 
   // Mensagem inicial ao selecionar um paciente
