@@ -1,0 +1,5 @@
+@for (m of mensagens(); track $index) {
+  <div class="message-content"
+       [class.texto-puro]="m.puro"
+       [innerHTML]="m.html"></div>
+}
